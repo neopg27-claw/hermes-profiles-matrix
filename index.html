@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hermes Agent Profiles — Matrix Ops Deck</title>
+  <meta name="description" content="A Matrix-themed explainer for Hermes Agent profiles and recommended specialized profiles beyond Neo." />
+  <style>
+    :root{
+      --bg:#020604; --panel:#06120c; --panel2:#091a10; --ink:#d8ffe7; --muted:#7abf90; --dim:#3f7650;
+      --green:#00ff7f; --green2:#40ffb2; --amber:#e5ff67; --red:#ff4d6d; --cyan:#57ffe1;
+      --line:rgba(64,255,178,.22); --shadow:0 0 30px rgba(0,255,127,.15), inset 0 0 24px rgba(0,255,127,.035);
+      --radius:22px; --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      --sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;min-height:100vh;background:radial-gradient(circle at 20% 0%,rgba(0,255,127,.12),transparent 34%),radial-gradient(circle at 80% 20%,rgba(87,255,225,.09),transparent 28%),linear-gradient(180deg,#020604,#010302 68%,#000);color:var(--ink);font-family:var(--sans);overflow-x:hidden}
+    body:before{content:"";position:fixed;inset:0;pointer-events:none;background:linear-gradient(rgba(255,255,255,.025) 50%,transparent 50%);background-size:100% 4px;mix-blend-mode:screen;opacity:.25;z-index:3}
+    .rain{position:fixed;inset:0;overflow:hidden;pointer-events:none;opacity:.32;z-index:0}.col{position:absolute;top:-120vh;font:14px/1 var(--mono);color:var(--green);writing-mode:vertical-rl;text-orientation:upright;text-shadow:0 0 10px var(--green);animation:fall linear infinite;filter:blur(.1px)}
+    @keyframes fall{to{transform:translateY(230vh)}}
+    main{position:relative;z-index:1}.wrap{width:min(1160px,calc(100% - 32px));margin:0 auto}.nav{position:sticky;top:0;z-index:5;backdrop-filter:blur(18px);background:rgba(2,6,4,.62);border-bottom:1px solid var(--line)}.navin{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 0}.brand{display:flex;gap:10px;align-items:center;font-family:var(--mono);letter-spacing:.08em;text-transform:uppercase;font-size:12px;color:var(--green2)}.sigil{width:30px;height:30px;border:1px solid var(--green);display:grid;place-items:center;border-radius:8px;box-shadow:0 0 18px rgba(0,255,127,.35)}.links{display:flex;gap:8px;flex-wrap:wrap}.links a{color:var(--muted);text-decoration:none;font:12px var(--mono);border:1px solid rgba(64,255,178,.16);border-radius:999px;padding:8px 10px}.links a:hover{color:var(--ink);border-color:var(--green)}
+    .hero{padding:72px 0 48px;display:grid;grid-template-columns:1.15fr .85fr;gap:34px;align-items:center}.eyebrow{font:12px var(--mono);color:var(--green);letter-spacing:.22em;text-transform:uppercase;margin-bottom:18px}.hero h1{font-size:clamp(46px,8vw,92px);line-height:.9;margin:0 0 22px;letter-spacing:-.08em;text-wrap:balance}.hero h1 span{color:transparent;-webkit-text-stroke:1px var(--green);text-shadow:0 0 28px rgba(0,255,127,.3)}.lead{font-size:clamp(17px,2.2vw,22px);line-height:1.5;color:#b8eec8;max-width:680px}.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.btn{display:inline-flex;align-items:center;gap:10px;min-height:46px;padding:0 16px;border-radius:999px;text-decoration:none;font:13px var(--mono);border:1px solid var(--green);color:#001b0c;background:linear-gradient(90deg,var(--green),var(--cyan));box-shadow:0 0 24px rgba(0,255,127,.24)}.btn.secondary{color:var(--green2);background:transparent;border-color:var(--line)}
+    .terminal{border:1px solid var(--line);border-radius:var(--radius);background:linear-gradient(180deg,rgba(9,26,16,.92),rgba(2,6,4,.88));box-shadow:var(--shadow);overflow:hidden}.bar{display:flex;gap:7px;padding:14px;border-bottom:1px solid var(--line);background:rgba(0,0,0,.26)}.dot{width:10px;height:10px;border-radius:50%;background:var(--green);box-shadow:0 0 10px var(--green)}.dot:nth-child(2){background:var(--amber)}.dot:nth-child(3){background:var(--red)}.screen{padding:22px;font:14px/1.7 var(--mono);color:#b9ffd0}.prompt{color:var(--green)}.cursor{display:inline-block;width:8px;height:18px;background:var(--green);vertical-align:-4px;animation:blink 1s steps(1) infinite}@keyframes blink{50%{opacity:0}}.ok{color:var(--cyan)}.warn{color:var(--amber)}
+    section{padding:42px 0}.grid{display:grid;gap:18px}.grid.two{grid-template-columns:repeat(2,1fr)}.grid.three{grid-template-columns:repeat(3,1fr)}.card{border:1px solid var(--line);border-radius:var(--radius);background:linear-gradient(180deg,rgba(9,26,16,.82),rgba(3,10,6,.78));box-shadow:var(--shadow);padding:24px;position:relative;overflow:hidden}.card:after{content:"";position:absolute;inset:auto 0 0;height:1px;background:linear-gradient(90deg,transparent,var(--green),transparent);opacity:.5}.kicker{font:12px var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--green);margin-bottom:10px}.card h2,.card h3{margin:0 0 12px;letter-spacing:-.04em}.card h2{font-size:clamp(28px,4vw,44px)}.card h3{font-size:24px}.card p,.card li{color:#b7dfc3;line-height:1.55}.card ul{padding-left:18px;margin:12px 0 0}.pillrow{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}.pill{font:11px var(--mono);color:var(--green2);border:1px solid rgba(64,255,178,.2);border-radius:999px;padding:7px 9px;background:rgba(0,255,127,.035)}
+    .profile{min-height:360px;display:flex;flex-direction:column}.avatar{width:54px;height:54px;border:1px solid var(--green);border-radius:16px;display:grid;place-items:center;font:700 22px var(--mono);color:var(--green);margin-bottom:18px;box-shadow:0 0 22px rgba(0,255,127,.2)}.profile .role{font:12px var(--mono);color:var(--cyan);letter-spacing:.12em;text-transform:uppercase}.profile h3{font-size:30px}.profile footer{margin-top:auto;padding-top:16px}.matrixline{font:12px var(--mono);color:var(--dim);border-top:1px dashed rgba(64,255,178,.2);padding-top:12px}.command{background:#020604;border:1px solid rgba(64,255,178,.2);border-radius:14px;padding:14px;font:13px/1.5 var(--mono);color:#caffd8;overflow:auto}.diagram{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:10px;align-items:center}.node{border:1px solid var(--line);border-radius:18px;padding:18px;background:rgba(0,255,127,.04);text-align:center}.arrow{color:var(--green);font:24px var(--mono)}
+    .footer{padding:42px 0 70px;color:var(--dim);font:12px var(--mono);text-align:center}.glitch{position:relative}.glitch:after{content:attr(data-text);position:absolute;left:2px;top:0;color:rgba(87,255,225,.55);clip-path:inset(0 0 55% 0);transform:translateX(-1px);opacity:.8}
+    @media(max-width:860px){.hero{grid-template-columns:1fr;padding-top:44px}.grid.two,.grid.three{grid-template-columns:1fr}.links{display:none}.diagram{grid-template-columns:1fr}.arrow{transform:rotate(90deg);text-align:center}.card{padding:20px}.terminal{order:-1}.hero h1{font-size:54px}.wrap{width:min(100% - 22px,1160px)}}
+    @media(prefers-reduced-motion:reduce){.col,.cursor{animation:none}.rain{display:none}html{scroll-behavior:auto}}
+  </style>
+</head>
+<body>
+  <div class="rain" aria-hidden="true" id="rain"></div>
+  <nav class="nav"><div class="wrap navin"><div class="brand"><div class="sigil">H</div><span>Hermes // Profile Matrix</span></div><div class="links"><a href="#why">Why profiles</a><a href="#profiles">3 operators</a><a href="#commands">Commands</a></div></div></nav>
+  <main>
+    <section class="hero wrap">
+      <div>
+        <div class="eyebrow">Transmission for pgupta</div>
+        <h1 class="glitch" data-text="Profiles let Hermes jack into different lives.">Profiles let Hermes <span>jack into</span> different lives.</h1>
+        <p class="lead">A Hermes profile is an isolated operating context: separate config, memory, sessions, skills, credentials, and gateway posture. Neo stays your generalist. New profiles become specialized crew members with their own rules of engagement.</p>
+        <div class="cta"><a class="btn" href="#profiles">Meet the operators</a><a class="btn secondary" href="#commands">See setup commands</a></div>
+      </div>
+      <aside class="terminal" aria-label="terminal preview">
+        <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+        <div class="screen">
+          <div><span class="prompt">$</span> hermes profile create oracle --clone</div>
+          <div class="ok">✓ cloned model + tools</div>
+          <div><span class="prompt">$</span> hermes -p oracle</div>
+          <div class="warn">loading memory://oracle</div>
+          <br />
+          <div>Neo = command center</div>
+          <div>Oracle = foresight + planning</div>
+          <div>Trinity = execution + code</div>
+          <div>Morpheus = learning + research <span class="cursor"></span></div>
+        </div>
+      </aside>
+    </section>
+
+    <section id="why" class="wrap grid two">
+      <article class="card"><div class="kicker">What profiles isolate</div><h2>Different shells. Different memories. Same agent engine.</h2><p>Profiles keep the context boundaries clean: a work-heavy profile can have GitHub and terminal muscle, while a research profile can favor web, notes, and long-horizon memory. You avoid one giant persona accumulating conflicting habits.</p><div class="pillrow"><span class="pill">config.yaml</span><span class="pill">.env</span><span class="pill">skills</span><span class="pill">memory</span><span class="pill">sessions</span></div></article>
+      <article class="card"><div class="kicker">Recommended operating model</div><h2>Neo remains the operator-of-record.</h2><p>Keep Neo as the default companion and router. Add specialized profiles only where isolation improves safety, taste, or speed. Each profile should have a job, a tool budget, and a permission boundary.</p><ul><li>Default to private repos under <strong>neopg27-claw</strong>.</li><li>Use explicit profile names for sensitive workflows.</li><li>Clone only what should be shared; isolate credentials where needed.</li></ul></article>
+    </section>
+
+    <section class="wrap"><div class="card"><div class="kicker">Mental model</div><div class="diagram"><div class="node"><strong>Request</strong><br><span class="muted">Discord / CLI / cron</span></div><div class="arrow">→</div><div class="node"><strong>Neo routes</strong><br><span>choose profile</span></div><div class="arrow">→</div><div class="node"><strong>Specialist executes</strong><br><span>isolated memory + tools</span></div></div></div></section>
+
+    <section id="profiles" class="wrap"><div class="kicker">Three new profiles beyond Neo</div><div class="grid three">
+      <article class="card profile"><div class="avatar">O</div><div class="role">The Oracle</div><h3>Strategy, planning, calendar sense</h3><p>Use for weekly reviews, decision memos, task prioritization, email/calendar synthesis, and “what should I do next?” moments.</p><ul><li>Tools: calendar/email, Notion, web, memory</li><li>Style: concise foresight, risk-first</li><li>Boundary: recommends; Neo approves execution</li></ul><footer><div class="matrixline">profile: oracle // mode: anticipatory</div></footer></article>
+      <article class="card profile"><div class="avatar">T</div><div class="role">Trinity</div><h3>Builder, code runner, repo operator</h3><p>Use for creating prototypes, editing repos, test-driven changes, PRs, CI repair, and shipping polished artifacts.</p><ul><li>Tools: terminal, file, GitHub, browser</li><li>Style: fast, verified, PR-first</li><li>Boundary: branches + PRs, no main pushes by default</li></ul><footer><div class="matrixline">profile: trinity // mode: execution</div></footer></article>
+      <article class="card profile"><div class="avatar">M</div><div class="role">Morpheus</div><h3>Research, learning, skill formation</h3><p>Use for deep dives, technical learning plans, market scans, paper summaries, and turning repeat workflows into reusable skills.</p><ul><li>Tools: web, arXiv, notes, session search</li><li>Style: teach + synthesize</li><li>Boundary: evidence before conclusions</li></ul><footer><div class="matrixline">profile: morpheus // mode: discovery</div></footer></article>
+    </div></section>
+
+    <section id="commands" class="wrap grid two">
+      <article class="card"><div class="kicker">Starter commands</div><h2>Spin up the crew.</h2><div class="command">hermes profile create oracle --clone<br>hermes profile create trinity --clone<br>hermes profile create morpheus --clone<br><br>hermes -p trinity -s github-pr-workflow,test-driven-development</div></article>
+      <article class="card"><div class="kicker">Configuration advice</div><h2>Keep permissions asymmetric.</h2><p><strong>Neo</strong> gets broad conversational context. <strong>Trinity</strong> gets GitHub and terminal. <strong>Oracle</strong> gets calendar/Notion but limited shell. <strong>Morpheus</strong> gets research tools and skill writing. That keeps the Matrix powerful without turning every profile into an all-access root shell.</p></article>
+    </section>
+  </main>
+  <footer class="footer wrap">Built as a static GitHub Pages artifact for mobile browsing. Follow the white rabbit responsibly.</footer>
+  <script>
+    const glyphs='アカサタナハマヤラワ0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZﾊﾐﾋｰｳｼﾅﾓﾆｻﾜﾂｵﾘｱﾎﾃﾏｹﾒｴｶｷﾑﾕﾗｾﾈｽﾀﾇﾍ';
+    const rain=document.getElementById('rain');
+    const cols=Math.min(44, Math.floor(window.innerWidth/18));
+    for(let i=0;i<cols;i++){
+      const el=document.createElement('div'); el.className='col'; el.style.left=(i*100/cols)+'vw'; el.style.animationDuration=(7+Math.random()*9)+'s'; el.style.animationDelay=(-Math.random()*12)+'s';
+      let s=''; for(let j=0;j<70;j++) s += glyphs[Math.floor(Math.random()*glyphs.length)]+'\n'; el.textContent=s; rain.appendChild(el);
+    }
+  </script>
+</body>
+</html>
