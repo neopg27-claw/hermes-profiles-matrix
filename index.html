@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Hermes Agent Profiles — Matrix Ops Deck</title>
-  <meta name="description" content="A Matrix-themed explainer for Hermes Agent profiles and recommended specialized profiles beyond Neo." />
+  <title>Hermes Agent Profiles - Matrix Ops Deck</title>
+  <meta name="description" content="A Matrix-themed explainer for Pranjal's Hermes profile setup: Neo, Trinity, Morpheus, and Oracle." />
   <style>
     :root{
       --bg:#020604; --panel:#06120c; --panel2:#091a10; --ink:#d8ffe7; --muted:#7abf90; --dim:#3f7650;
@@ -29,47 +29,46 @@
 </head>
 <body>
   <div class="rain" aria-hidden="true" id="rain"></div>
-  <nav class="nav"><div class="wrap navin"><div class="brand"><div class="sigil">H</div><span>Hermes // Profile Matrix</span></div><div class="links"><a href="#why">Why profiles</a><a href="#profiles">3 operators</a><a href="#commands">Commands</a></div></div></nav>
+  <nav class="nav"><div class="wrap navin"><div class="brand"><div class="sigil">H</div><span>Hermes // Profile Matrix</span></div><div class="links"><a href="#why">Why profiles</a><a href="#profiles">The crew</a><a href="#commands">Setup posture</a></div></div></nav>
   <main>
     <section class="hero wrap">
       <div>
         <div class="eyebrow">Transmission for pgupta</div>
-        <h1 class="glitch" data-text="Profiles let Hermes jack into different lives.">Profiles let Hermes <span>jack into</span> different lives.</h1>
-        <p class="lead">A Hermes profile is an isolated operating context: separate config, memory, sessions, skills, credentials, and gateway posture. Neo stays your generalist. New profiles become specialized crew members with their own rules of engagement.</p>
-        <div class="cta"><a class="btn" href="#profiles">Meet the operators</a><a class="btn secondary" href="#commands">See setup commands</a></div>
+        <h1 class="glitch" data-text="Profiles turn Hermes into a crew.">Profiles turn Hermes into <span>a crew</span>.</h1>
+        <p class="lead">A Hermes profile is an isolated operating context: separate config, memory, sessions, skills, credentials, and gateway posture. Neo is the front door. Trinity, Morpheus, and Oracle each own a domain so the system stays sharp without becoming fragmented.</p>
+        <div class="cta"><a class="btn" href="#profiles">Meet the crew</a><a class="btn secondary" href="#commands">See setup posture</a></div>
       </div>
       <aside class="terminal" aria-label="terminal preview">
         <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
         <div class="screen">
-          <div><span class="prompt">$</span> hermes profile create oracle --clone</div>
-          <div class="ok">✓ cloned model + tools</div>
-          <div><span class="prompt">$</span> hermes -p oracle</div>
-          <div class="warn">loading memory://oracle</div>
+          <div><span class="prompt">$</span> hermes profile list</div>
+          <div class="ok">◆ default  = Neo</div>
+          <div class="ok">  trinity  = life + admin</div>
+          <div class="ok">  morpheus = health + fitness</div>
+          <div class="ok">  oracle   = research + synthesis</div>
           <br />
-          <div>Neo = command center</div>
-          <div>Oracle = foresight + planning</div>
-          <div>Trinity = execution + code</div>
-          <div>Morpheus = learning + research <span class="cursor"></span></div>
+          <div><span class="prompt">$</span> hermes -p oracle</div>
+          <div class="warn">loading memory://oracle <span class="cursor"></span></div>
         </div>
       </aside>
     </section>
 
     <section id="why" class="wrap grid two">
-      <article class="card"><div class="kicker">What profiles isolate</div><h2>Different shells. Different memories. Same agent engine.</h2><p>Profiles keep the context boundaries clean: a work-heavy profile can have GitHub and terminal muscle, while a research profile can favor web, notes, and long-horizon memory. You avoid one giant persona accumulating conflicting habits.</p><div class="pillrow"><span class="pill">config.yaml</span><span class="pill">.env</span><span class="pill">skills</span><span class="pill">memory</span><span class="pill">sessions</span></div></article>
-      <article class="card"><div class="kicker">Recommended operating model</div><h2>Neo remains the operator-of-record.</h2><p>Keep Neo as the default companion and router. Add specialized profiles only where isolation improves safety, taste, or speed. Each profile should have a job, a tool budget, and a permission boundary.</p><ul><li>Default to private repos under <strong>neopg27-claw</strong>.</li><li>Use explicit profile names for sensitive workflows.</li><li>Clone only what should be shared; isolate credentials where needed.</li></ul></article>
+      <article class="card"><div class="kicker">What profiles isolate</div><h2>Different shells. Different memories. Same agent engine.</h2><p>Profiles keep context boundaries clean: a life-admin profile can carry preferences about travel and finance, a health profile can remember training constraints, and a research profile can optimize for evidence. You avoid one giant persona accumulating conflicting habits.</p><div class="pillrow"><span class="pill">config.yaml</span><span class="pill">.env</span><span class="pill">skills</span><span class="pill">memory</span><span class="pill">sessions</span></div></article>
+      <article class="card"><div class="kicker">Recommended operating model</div><h2>Neo remains the operator-of-record.</h2><p>Keep Neo as the default companion, orchestrator, and generalist. The siblings are not hard-walled silos. They are better-fit contexts with soft handoff rules, shared taste, and domain-specific memory.</p><ul><li>Tech, coding, automation, and agent setup stay with <strong>Neo</strong>.</li><li>Life/admin, health, and research route to the sibling when that improves quality.</li><li>Prefer soft behavioral rules over restrictive tool access.</li></ul></article>
     </section>
 
-    <section class="wrap"><div class="card"><div class="kicker">Mental model</div><div class="diagram"><div class="node"><strong>Request</strong><br><span class="muted">Discord / CLI / cron</span></div><div class="arrow">→</div><div class="node"><strong>Neo routes</strong><br><span>choose profile</span></div><div class="arrow">→</div><div class="node"><strong>Specialist executes</strong><br><span>isolated memory + tools</span></div></div></div></section>
+    <section class="wrap"><div class="card"><div class="kicker">Mental model</div><div class="diagram"><div class="node"><strong>Request</strong><br><span class="muted">Discord / CLI / cron</span></div><div class="arrow">→</div><div class="node"><strong>Neo sees the system</strong><br><span>answer or hand off</span></div><div class="arrow">→</div><div class="node"><strong>Best-fit profile</strong><br><span>domain memory + voice</span></div></div></div></section>
 
-    <section id="profiles" class="wrap"><div class="kicker">Three new profiles beyond Neo</div><div class="grid three">
-      <article class="card profile"><div class="avatar">O</div><div class="role">The Oracle</div><h3>Strategy, planning, calendar sense</h3><p>Use for weekly reviews, decision memos, task prioritization, email/calendar synthesis, and “what should I do next?” moments.</p><ul><li>Tools: calendar/email, Notion, web, memory</li><li>Style: concise foresight, risk-first</li><li>Boundary: recommends; Neo approves execution</li></ul><footer><div class="matrixline">profile: oracle // mode: anticipatory</div></footer></article>
-      <article class="card profile"><div class="avatar">T</div><div class="role">Trinity</div><h3>Builder, code runner, repo operator</h3><p>Use for creating prototypes, editing repos, test-driven changes, PRs, CI repair, and shipping polished artifacts.</p><ul><li>Tools: terminal, file, GitHub, browser</li><li>Style: fast, verified, PR-first</li><li>Boundary: branches + PRs, no main pushes by default</li></ul><footer><div class="matrixline">profile: trinity // mode: execution</div></footer></article>
-      <article class="card profile"><div class="avatar">M</div><div class="role">Morpheus</div><h3>Research, learning, skill formation</h3><p>Use for deep dives, technical learning plans, market scans, paper summaries, and turning repeat workflows into reusable skills.</p><ul><li>Tools: web, arXiv, notes, session search</li><li>Style: teach + synthesize</li><li>Boundary: evidence before conclusions</li></ul><footer><div class="matrixline">profile: morpheus // mode: discovery</div></footer></article>
+    <section id="profiles" class="wrap"><div class="kicker">The active crew</div><div class="grid three">
+      <article class="card profile"><div class="avatar">T</div><div class="role">Trinity</div><h3>Life, admin, logistics</h3><p>Use for personal admin, finance, taxes, visa, shopping, travel, household logistics, and the thousand small loops that should not pollute the coding context.</p><ul><li>Tools: Gmail, Calendar, Drive, Notion, web</li><li>Style: organized, direct, permission-aware</li><li>Boundary: creates/edits are okay where allowed; deletion and sending require approval</li></ul><footer><div class="matrixline">profile: trinity // mode: life ops</div></footer></article>
+      <article class="card profile"><div class="avatar">M</div><div class="role">Morpheus</div><h3>Health, fitness, recovery</h3><p>Use for nutrition, workouts, symptoms, doctor prep, habit loops, recovery plans, and keeping health context separate from general operations.</p><ul><li>Tools: notes, calendar, web, memory</li><li>Style: grounded, cautious, pattern-aware</li><li>Boundary: supports decisions; does not pretend to be a doctor</li></ul><footer><div class="matrixline">profile: morpheus // mode: body signal</div></footer></article>
+      <article class="card profile"><div class="avatar">O</div><div class="role">The Oracle</div><h3>Research, evidence, synthesis</h3><p>Use for deep research, source-checking, market scans, paper trails, literature reviews, and separating what is known from what is merely plausible.</p><ul><li>Tools: web, arXiv, docs, notes, citations</li><li>Style: evidence-first, calm, caveated</li><li>Boundary: no fake certainty; source quality is part of the answer</li></ul><footer><div class="matrixline">profile: oracle // mode: signal extraction</div></footer></article>
     </div></section>
 
     <section id="commands" class="wrap grid two">
-      <article class="card"><div class="kicker">Starter commands</div><h2>Spin up the crew.</h2><div class="command">hermes profile create oracle --clone<br>hermes profile create trinity --clone<br>hermes profile create morpheus --clone<br><br>hermes -p trinity -s github-pr-workflow,test-driven-development</div></article>
-      <article class="card"><div class="kicker">Configuration advice</div><h2>Keep permissions asymmetric.</h2><p><strong>Neo</strong> gets broad conversational context. <strong>Trinity</strong> gets GitHub and terminal. <strong>Oracle</strong> gets calendar/Notion but limited shell. <strong>Morpheus</strong> gets research tools and skill writing. That keeps the Matrix powerful without turning every profile into an all-access root shell.</p></article>
+      <article class="card"><div class="kicker">Active commands</div><h2>Enter the right construct.</h2><div class="command">hermes profile list<br><br># Neo is the current default profile<br>hermes<br><br># Sibling profiles<br>hermes -p trinity<br>hermes -p morpheus<br>hermes -p oracle</div></article>
+      <article class="card"><div class="kicker">Configuration advice</div><h2>Soft handoffs beat hard cages.</h2><p><strong>Neo</strong> owns tech, coding, automation, and the front-door experience. <strong>Trinity</strong> owns life/admin. <strong>Morpheus</strong> owns health/fitness. <strong>Oracle</strong> owns research. Keep tools broad enough to be useful, but encode domain boundaries in SOUL.md and AGENTS.md so each profile knows when to answer and when to point elsewhere.</p></article>
     </section>
   </main>
   <footer class="footer wrap">Built as a static GitHub Pages artifact for mobile browsing. Follow the white rabbit responsibly.</footer>
